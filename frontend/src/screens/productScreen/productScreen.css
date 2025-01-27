@@ -1,0 +1,237 @@
+.main-container {
+  /* background-color: #f0f0f0; */
+  /* width: 100vw;
+  height: 100vh; */
+}
+
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  /* 4 items per row */
+  gap: 20px;
+  /* Space between items */
+  padding: 20px;
+}
+
+.product-card {
+  /* width: 400px; */
+  padding: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  /* margin: 15px; */
+  font-family: Arial, sans-serif;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Container */
+.image-container {
+  position: relative;
+}
+
+.product-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+/* Edit Icon */
+.edit-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 50%;
+  padding: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+}
+
+.edit-icon:hover {
+  background-color: #61c6f8;
+  color: #fff;
+}
+
+.edit-icon svg {
+  font-size: 18px;
+}
+.delete-icon {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: black;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-size: 18px;
+  /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); */
+  transition: background-color 0.3s ease-in-out;
+}
+
+.delete-icon:hover {
+  background-color: rgba(200, 30, 50, 0.9);
+}
+
+/* Product Details */
+.product-details {
+  padding: 15px;
+  text-align: center;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0px;
+  text-align: start;
+}
+
+.product-description {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 15px;
+  text-align: start;
+}
+
+.product-price {
+  font-size: 16px;
+  font-weight: bold;
+  color: #61c6f8;
+  margin-bottom: 10px;
+}
+
+.product-category {
+  font-size: 12px;
+  color: #8c8989;
+  font-style: italic;
+  padding: 0px;
+  margin: 0px;
+}
+
+.loader {
+  border: 8px solid #e42828;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* Spinner animation */
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Hide the loader after loading */
+#loader-container {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+}
+
+.empty-container-div{
+  display: flex;
+  /* Ensures flexibility for child alignment */
+  justify-content: center;
+  /* Centers horizontally */
+  align-items: center;
+  /* Centers vertically */
+  height: 100vh;
+}
+
+.empty-container-div div{
+  text-align: center;
+  padding: 20px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.empty-container h2 {
+  font-size: 1.5rem;
+  color: #555;
+  margin: 0;
+}
+
+.body-container{
+  /* display: flex;
+  flex-direction: column; */
+}
+select {
+  padding: 10px;
+  font-size: 16px;
+  color: #333;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+select:focus {
+  outline: none;
+  border-color: #61c6f8 ;
+  box-shadow: 0 0 5px #61c6f8;
+}
+
+select:hover {
+  background-color: #f1f1f1;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+}
+.pagination-container #pagination{
+  width: 50%;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  text-align: center;
+}
+
+.pagination-container #pagination p{
+  margin-right: 10px;
+
+}
+
+.pagination-container select{
+  width: 300px;
+}

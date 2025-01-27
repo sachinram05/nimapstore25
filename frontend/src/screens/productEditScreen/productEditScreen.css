@@ -1,0 +1,107 @@
+.edit-container {
+    /* display: flex; */
+    padding: 8px;
+}
+
+.edit-form-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-start;
+    overflow: hidden;
+    width: 40%;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Heading */
+.form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Form Group */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Input Fields */
+.form-group input,
+.form-group textarea {
+    /* width: 100%;  */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Input Hover & Focus */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #6bbfe9;
+    ;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Submit Button Hover */
+.submit-button:hover {
+    background-color: #3d9dcd;
+}
+
+.back-link {
+    text-decoration: none;
+    color: #6bbfe9;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.back-link:hover {
+
+    color: #3d9dcd;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .form-container {
+        padding: 15px;
+    }
+
+    .submit-button {
+        font-size: 14px;
+    }
+}

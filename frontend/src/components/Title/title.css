@@ -1,0 +1,25 @@
+
+.heading-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 10px 0px;
+}
+
+.add-product-btn {
+
+    background-color: #6bbfe9;
+    color: white;
+    font-weight: bold;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.add-product-btn:hover {
+    background-color: #3d9dcd;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
