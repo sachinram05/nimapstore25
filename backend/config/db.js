@@ -13,13 +13,13 @@ const sequelize = new Sequelize(
     }
 )
 
-
+//connect databse
 const connectDB = async () => {
     try {
         await sequelize.authenticate();
         console.log('Database connected success!');
 
-        // Sync
+        // Sync with models
         await sequelize.sync({ force: false });
         console.log('Database synced success!');
     } catch (error) {

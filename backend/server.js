@@ -9,17 +9,19 @@ const cors = require('cors');
 )();
 
 const app = express();
+
 app.use(cors())
+
 app.use(express.json());
 
 
-
+//routes
 app.use("/products", productRoutes)
 app.use("/categories", categoryRoutes)
 
-const PORT = 5000;
+const PORT = 5000;//PORT
 
-
+//server
 app.listen(PORT, () => {
     console.log(`server is running on port ${PORT}`)
 })

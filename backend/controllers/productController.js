@@ -77,8 +77,7 @@ const updateProduct = async (req, res) => {
 
         const [product] = await Product.update(productData, {
             where: { id: productId }
-        });
-        console.log(product) //TODO - please check response what comes after update
+        }); //0/1
 
         if (!product) {
             res.status(404).json({
