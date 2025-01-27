@@ -32,7 +32,8 @@
 }
 
 .edit-button {
-    background-color: #6bbfe9;;
+    background-color: #6bbfe9;
+    ;
     color: #fff;
     margin-right: 20px;
 }
@@ -48,4 +49,11 @@
 
 .delete-button:hover {
     background-color: #a71d2a;
+}
+
+.empty-container-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
 }

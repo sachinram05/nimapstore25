@@ -164,11 +164,8 @@
 
 .empty-container-div{
   display: flex;
-  /* Ensures flexibility for child alignment */
   justify-content: center;
-  /* Centers horizontally */
   align-items: center;
-  /* Centers vertically */
   height: 100vh;
 }
 
@@ -189,8 +186,6 @@
 }
 
 .body-container{
-  /* display: flex;
-  flex-direction: column; */
 }
 select {
   padding: 10px;
@@ -210,6 +205,9 @@ select:focus {
 
 select:hover {
   background-color: #f1f1f1;
+}
+select option:hover {
+  box-shadow: 0 0 10px 100px #1882A8 inset;
 }
 
 .pagination-container {
@@ -234,4 +232,9 @@ select:hover {
 
 .pagination-container select{
   width: 300px;
+}
+
+.active-page{
+  
+  color: green;
 }

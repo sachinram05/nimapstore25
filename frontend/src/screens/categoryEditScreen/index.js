@@ -40,8 +40,7 @@ const CategoryEditScreen = () => {
             setIsLoading(false)
         }
     }
-    // '//akdkas;'
-    //  submit and page issue  resolve
+
     return (
         <div className='edit-container'>
             <Link to={-1} className="back-link">
@@ -50,7 +49,7 @@ const CategoryEditScreen = () => {
             <div className='edit-form-container'>
                 <div className="form-container">
 
-                    <h1>{isEdit?'Update Category':"Add Category"}</h1>
+                    <h1>{isEdit ? 'Update Category' : "Add Category"}</h1>
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
                             <label htmlFor="categoryName">Category Name:</label>
@@ -64,7 +63,7 @@ const CategoryEditScreen = () => {
                                 required
                             />
                         </div>
-                       
+
                         <button type="submit" className="submit-button">
                             {isEdit ? 'update category' : "add category"}
                         </button>

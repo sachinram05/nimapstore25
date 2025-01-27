@@ -4,6 +4,7 @@ import './categoryScreen.css'
 import { FaEdit, FaTrash } from 'react-icons/fa';
 import Title from '../../components/Title';
 import { useNavigate } from 'react-router-dom';
+import Loader from '../../components/Loader';
 
 const CategoryScreen = () => {
 
@@ -13,11 +14,11 @@ const CategoryScreen = () => {
 
 
     const getCategories = async () => {
+        setIsLoading(true)
         try {
             await axios.get('http://localhost:5000/categories')
                 .then((resp) => {
-                    // console.log()
-                    if (resp.data && resp.data.data && resp.data.data.length > 0) {
+                    if (resp.data && resp.data.data) {
                         setCategories(resp.data.data);
                     }
                 })
@@ -26,6 +27,8 @@ const CategoryScreen = () => {
                 })
         } catch (error) {
             alert(error.message);
+        } finally {
+            setIsLoading(false)
         }
     }
 
@@ -57,6 +60,7 @@ const CategoryScreen = () => {
                 }
             })
             } /> 
+            {isLoading ? <Loader /> : categories.length == 0 ? <div className='empty-container-div' > <div> <h2> Empty Categories </h2></div></div>:
             <table className="category-table">
                 <thead>
                     <tr>
@@ -92,7 +96,7 @@ const CategoryScreen = () => {
                         </tr>
                     ))}
                 </tbody>
-            </table>
+            </table>}
         </>
     )
 }

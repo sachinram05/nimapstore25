@@ -22,14 +22,12 @@
     font-family: Arial, sans-serif;
 }
 
-/* Heading */
 .form-container h1 {
     text-align: center;
     margin-bottom: 20px;
     color: #333;
 }
 
-/* Form Group */
 .form-group {
     display: flex;
     flex-direction: column;
@@ -37,7 +35,6 @@
     margin-bottom: 15px;
 }
 
-/* Labels */
 .form-group label {
     display: block;
     margin-bottom: 5px;
@@ -45,7 +42,7 @@
     color: #555;
 }
 
-/* Input Fields */
+
 .form-group input,
 .form-group textarea {
     /* width: 100%;  */
@@ -55,7 +52,6 @@
     font-size: 16px;
 }
 
-/* Input Hover & Focus */
 .form-group input:focus,
 .form-group textarea:focus {
     border-color: #007bff;
@@ -63,7 +59,7 @@
     box-shadow: 0 0 4px rgba(0, 123, 255, 0.4);
 }
 
-/* Submit Button */
+
 .submit-button {
     width: 100%;
     padding: 10px;
@@ -77,7 +73,6 @@
     transition: background-color 0.3s ease;
 }
 
-/* Submit Button Hover */
 .submit-button:hover {
     background-color: #3d9dcd;
 }

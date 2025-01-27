@@ -1,8 +1,8 @@
 import './title.css';
 
-const Title =  ({title , addTitle, addHandler}) =>{
+const Title = ({ title, addTitle, addHandler }) => {
 
-    return(
+    return (
         <div className='heading-container'>
             <h2>{title}</h2>
             <div>

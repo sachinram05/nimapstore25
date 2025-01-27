@@ -24,7 +24,11 @@ const ProductEditScreen = () => {
         e.preventDefault();
         try {
             if (selectedCategoryId == null) {
-                alert("Please select category")
+                alert("Please select category or create if empty")
+                return;
+            }
+            if (price < 0) {
+                alert("price should be positive number")
                 return;
             }
             setIsLoading(true)
@@ -82,6 +86,7 @@ const ProductEditScreen = () => {
                             <input
                                 id="price"
                                 name="price"
+                                type='number'
                                 value={price}
                                 onChange={(e) => setPrice(e.target.value)}
                                 placeholder="Enter price"

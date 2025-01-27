@@ -2,14 +2,13 @@ import './navBar.css'
 import logoImage from '../../assets/nimapLogo.png'
 import { Link } from 'react-router-dom';
 
-const NavBar = () =>{
+const NavBar = () => {
 
-    return(
+    return (
         <div className='nav-container'>
             <div className='title-container' >
-                <img src={logoImage} alt="Logo"  />
+                <img src={logoImage} alt="Logo" />
                 <span class="title"><Link className='titleLink' to="/">NIMAP STORE</Link></span>
-                
             </div>
             <ul className="nav-links">
                 <li>

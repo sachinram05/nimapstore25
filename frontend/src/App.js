@@ -9,14 +9,12 @@ const App = () => {
   return (
     <Router>
       <NavBar />
-      <div >
         <Routes>
-          <Route path="/categories/edit" element={<CategoryEditScreen />} />
+        <Route path="/categories/edit" element={<CategoryEditScreen />} />
         <Route path="/categories" element={<CategoryScreen />} />
         <Route path="/product/edit" element={<ProductEditScreen />} />
         <Route path="/" exact element={<ProductScreen />} />
         </Routes>
-      </div>
     </Router>
   );
 };

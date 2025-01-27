@@ -20,7 +20,7 @@ const ProductScreen = () => {
     const [totalProducts, setTotalProducts] = useState(0)
     const [isLoading, setIsLoading] = useState(false);
     const [categories, setCategories] = useState([])
-    const [currentCategoryId, setCurrentCategoryId] = useState(1)
+    const [currentCategoryId, setCurrentCategoryId] = useState()
     const navigate = useNavigate();
 
     const start = (currentPage - 1) * pageSize + 1;
@@ -38,7 +38,7 @@ const ProductScreen = () => {
                 .then((resp) => {
                     console.log(resp);
                     console.log(resp.data.data)
-                    if (resp.data && resp.data.data && resp.data.data.length > 0) {
+                    if (resp.data) {
                         setProducts(resp.data.data);
                         setTotalPages(resp.data.totalPages);
                         setTotalProducts(resp.data.totalRecords)
@@ -59,9 +59,10 @@ const ProductScreen = () => {
         try {
             await axios.get('http://localhost:5000/categories')
                 .then((resp) => {
-                    // console.log()
-                    if (resp.data && resp.data.data && resp.data.data.length > 0) {
+                    if (resp.data && resp.data.data) {
                         setCategories(resp.data.data);
+                        if (resp.data.data.length > 0 && resp.data.data[0])
+                        setCurrentCategoryId(resp.data.data[0].categoryId)
                     }
                 })
                 .catch((error) => {
@@ -101,19 +102,19 @@ const ProductScreen = () => {
     }
 
     return (
-        <div>
+        <div className='body-container'>
+            <Title title="Latest Products" addTitle="+ Add Product" addHandler={() => {
+                navigate("/product/edit", {
+                    state: {
+                        isEdit: false,
+                        categories: categories
+                    }
+                })
+            }} />
         {isLoading ?
             <Loader />
-            : products.length <= 0 ? <div className='empty-container-div' > <div> <h2>No Items Found</h2></div></div> :
-                <div className='body-container'>
-                    <Title title="Latest Products" addTitle="+ Add Product" addHandler={() => {
-                        navigate("/product/edit", {
-                            state: {
-                                isEdit: false,
-                                categories: categories
-                            }
-                        })
-                    }} />
+            : products.length <= 0 ? <div className='empty-container-div' > <div> <h2>No Items Found</h2> <p>if category is empty please create category first</p></div></div> :
+              
                     <div className="product-grid">
                         {products.map((product) => (
                             <div key={product.id} className="product-card">
@@ -168,7 +169,7 @@ const ProductScreen = () => {
                         ))}
                     </div>
                     
-                </div>}
+                }
             <div className='pagination-container'>
                 <select id="options" value={currentCategoryId} onChange={(e) => {
                     setCurrentPage(1)
@@ -182,7 +183,7 @@ const ProductScreen = () => {
                 </select>
                 <div id='pagination'>
                     <p>{start}-{end} of {totalProducts}</p>
-                    <ResponsivePagination
+                    <ResponsivePagination 
                         current={currentPage}
                         total={totalPages}
                         onPageChange={handlePageChange}
@@ -190,7 +191,7 @@ const ProductScreen = () => {
                 </div>
 
             </div>
-        </div>
+        </div >
                 
     )
 }
