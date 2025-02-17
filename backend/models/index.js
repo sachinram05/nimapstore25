@@ -7,6 +7,7 @@ dbConnect.sequelize = sequelize;
 
 dbConnect.Category = require('./categoryModel.js')(sequelize, Sequelize);
 dbConnect.Product = require('./productModel.js')(sequelize, Sequelize);
+dbConnect.User = require("./userModel.js")(sequelize,Sequelize);
 
 //model connections
 dbConnect.Category.hasMany(dbConnect.Product, { foreignKey: 'categoryId' });

@@ -75,7 +75,7 @@ const ProductScreen = () => {
 
     useEffect(() => {
         getAllproducts();
-    }, [currentPage, currentCategoryId])
+    }, [currentPage, currentCategoryId, getAllproducts])
 
     useEffect(() => {
         getCategories()
